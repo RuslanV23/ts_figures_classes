@@ -21,7 +21,7 @@ export class Triangle implements Figure {
     public c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('Side is <= 0. Please, input valid value');
+      throw new Error('All triangle sides must be positive numbers');
     }
 
     if (a + b <= c || a + c <= b || b + c <= a) {
