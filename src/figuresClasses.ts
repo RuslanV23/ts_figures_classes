@@ -25,7 +25,7 @@ export class Triangle implements Figure {
     }
 
     if (a + b <= c || a + c <= b || b + c <= a) {
-      throw new Error('Triangle does not exist');
+      throw new Error('The provided side lengths cannot form a valid triangle');
     }
   }
 
@@ -51,7 +51,7 @@ export class Circle implements Figure {
     public radius: number,
   ) {
     if (radius <= 0) {
-      throw new Error('radius is not valid!');
+      throw new Error('Radius must be a positive number');
     }
   }
 
@@ -66,15 +66,15 @@ export class Rectangle implements Figure {
   constructor(
     public color: Color,
     public width: number,
-    public heigth: number,
+    public height: number,
   ) {
-    if (width <= 0 || heigth <= 0) {
-      throw new Error('Side value is not valid');
+    if (width <= 0 || height <= 0) {
+      throw new Error('Width and height must be positive numbers');
     }
   }
 
   getArea(): number {
-    return numberFloor(this.heigth * this.width);
+    return numberFloor(this.height * this.width);
   }
 }
 
